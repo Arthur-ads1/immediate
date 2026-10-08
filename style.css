@@ -714,3 +714,348 @@ nav > a:hover::after,
         font-size: 32px;
     }
 
+/* =========================================================
+   PÁGINA DE PRODUTOS
+   ========================================================= */
+
+
+/* BANNER */
+
+.produtos-banner {
+    min-height: 420px;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0.45)
+        ),
+        url("imagens/produtos-fundo.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 60px 20px;
+}
+
+
+.produtos-faixa {
+    width: min(900px, 90%);
+
+    padding: 45px 50px;
+
+    background: rgba(255, 255, 255, 0.84);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    border: 1px solid rgba(255, 255, 255, 0.6);
+
+    border-radius: 8px;
+
+    text-align: center;
+
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.18);
+}
+
+
+.produtos-faixa h1 {
+    margin: 0 0 12px;
+
+    font-size: 42px;
+    font-weight: 600;
+
+    color: #222;
+}
+
+
+.produtos-faixa p {
+    margin: 0;
+
+    font-size: 16px;
+    line-height: 1.7;
+
+    color: #555;
+}
+
+
+/* =========================================================
+   INTRODUÇÃO
+   ========================================================= */
+
+.produtos-introducao {
+    padding: 80px 8%;
+
+    background: #f7f7f7;
+}
+
+
+.produtos-introducao-texto {
+    max-width: 900px;
+    margin: auto;
+
+    text-align: center;
+}
+
+
+.produtos-subtitulo {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #d35400;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+}
+
+
+.produtos-introducao h2 {
+    margin: 0;
+
+    font-size: 32px;
+    font-weight: 600;
+
+    color: #222;
+}
+
+
+.linha-destaque {
+    width: 60px;
+    height: 3px;
+
+    margin: 18px auto 25px;
+
+    background: #d35400;
+
+    border-radius: 3px;
+}
+
+
+.produtos-introducao p {
+    max-width: 750px;
+
+    margin: auto;
+
+    font-size: 16px;
+    line-height: 1.8;
+
+    color: #666;
+}
+
+
+/* =========================================================
+   CATEGORIAS
+   ========================================================= */
+
+.produtos-categorias {
+    padding: 80px 8%;
+
+    background: #ffffff;
+}
+
+
+.produtos-titulo {
+    text-align: center;
+
+    margin-bottom: 45px;
+}
+
+
+.produtos-titulo h2 {
+    margin: 0;
+
+    font-size: 32px;
+    font-weight: 600;
+
+    color: #222;
+}
+
+
+/* GRID */
+
+.produtos-grid {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+/* CARD */
+
+.produto-card {
+    padding: 35px 30px;
+
+    background: #fff;
+
+    border: 1px solid #e8e8e8;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+.produto-card:hover {
+    transform: translateY(-6px);
+
+    border-color: #d35400;
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+
+/* ÍCONE */
+
+.produto-icone {
+    width: 65px;
+    height: 65px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #fff3eb;
+
+    border-radius: 50%;
+
+    color: #d35400;
+
+    font-size: 25px;
+}
+
+
+.produto-card h3 {
+    margin: 0 0 12px;
+
+    font-size: 21px;
+    font-weight: 600;
+
+    color: #222;
+}
+
+
+.produto-card p {
+    min-height: 55px;
+
+    margin: 0 0 20px;
+
+    font-size: 14px;
+    line-height: 1.7;
+
+    color: #666;
+}
+
+
+/* LINK DO CARD */
+
+.produto-card a {
+    display: inline-block;
+
+    padding: 9px 18px;
+
+    background: #d35400;
+
+    color: #fff;
+
+    text-decoration: none;
+
+    border-radius: 5px;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    transition: background 0.3s ease;
+}
+
+
+.produto-card a:hover {
+    background: #a84300;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .produtos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .produtos-banner {
+        min-height: 350px;
+
+        background-attachment: scroll;
+
+        padding: 40px 15px;
+    }
+
+
+    .produtos-faixa {
+        padding: 35px 25px;
+    }
+
+
+    .produtos-faixa h1 {
+        font-size: 32px;
+    }
+
+
+    .produtos-faixa p {
+        font-size: 14px;
+    }
+
+
+    .produtos-introducao,
+    .produtos-categorias {
+        padding: 60px 6%;
+    }
+
+
+    .produtos-introducao h2,
+    .produtos-titulo h2 {
+        font-size: 26px;
+    }
+
+
+    .produtos-grid {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+
+    .produto-card {
+        padding: 30px 25px;
+    }
+
+}
