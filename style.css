@@ -1,3 +1,8 @@
+/* =========================================================
+   IMMEDIATE - CSS ORGANIZADO
+   =========================================================
+ */
+
 * {
     margin: 0;
     padding: 0;
@@ -6,35 +11,73 @@
 
 header {
     width: 100%;
-    padding: 40px 60px;
+    padding: 28px 60px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
     background-color: white;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #eeeeee;
+
+    position: relative;
+    z-index: 100;
+    box-sizing: border-box;
 }
 
+
 .logo img {
-    height: 45px;
+    height: 70px;
     width: auto;
     display: block;
 }
 
 nav {
     display: flex;
-    gap: 30px;
+    align-items: center;
+    gap: 32px;
 }
 
 nav a {
+    position: relative;
+
     text-decoration: none;
-    color: #333;
-    font-family: Arial, sans-serif;
+    color: #222;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+
+    padding: 8px 0;
+
+    transition: color 0.25s ease;
 }
 
 nav a:hover {
     color: #d35400;
+}
+
+/* Linha laranja abaixo do menu */
+
+nav > a::after,
+.menu-dropdown > a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 0;
+    height: 2px;
+
+    background-color: #d35400;
+
+    transition: width 0.25s ease;
+}
+
+nav > a:hover::after,
+.menu-dropdown:hover > a::after {
+    width: 100%;
 }
 
 .menu-dropdown {
@@ -45,15 +88,20 @@ nav a:hover {
     display: none;
 
     position: absolute;
-    top: 100%;
-    left: 0;
+    top: calc(100% + 8px);
+    left: -15px;
+
+    min-width: 220px;
 
     background-color: white;
-    min-width: 180px;
 
     padding: 10px 0;
 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+
+    z-index: 101;
 }
 
 .menu-dropdown:hover .submenu {
@@ -62,15 +110,29 @@ nav a:hover {
 }
 
 .submenu a {
-    padding: 10px 15px;
-    text-decoration: none;
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 11px 18px;
+
     color: #333;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+
+    transition: background-color 0.2s ease,
+                color 0.2s ease;
+}
+
+.submenu a::after {
+    display: none;
 }
 
 .submenu a:hover {
-    background-color: #f2f2f2;
+    background-color: #f7f7f7;
+    color: #d35400;
 }
-
 /* =========================
    BANNER COM VÍDEO
 ========================= */
@@ -78,7 +140,7 @@ nav a:hover {
 .banner {
     position: relative;
     width: 100%;
-    height: 600px;
+    height: 700px;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -136,395 +198,115 @@ nav a:hover {
     font-size: 22px;
     margin-bottom: 30px;
 }
-
-.botao {
-    display: inline-block;
-
-    padding: 14px 25px;
-
-    background-color: #d35400;
-    color: white;
-
-    text-decoration: none;
-    border-radius: 5px;
-    }
-    
-.empresa {
-    padding: 100px 10%;
-    text-align: center;
-}
-
-.empresa h2 {
-    font-size: 32px;
-    margin-bottom: 20px;
-}
-
-.empresa p {
-    max-width: 900px;
-    margin: 0 auto;
-    line-height: 1.6;
-    font-size: 17px;
-}
-
 /* =========================
-   LINHAS DE PRODUTOS
+   SOBRE A IMMEDIATE
 ========================= */
 
-.produtos {
-    padding: 100px 10%;
-    text-align: center;
+.empresa {
+    background: #f7f7f7;
+    padding: 90px 60px;
 }
 
-.produtos h2 {
-    font-size: 36px;
-    margin-bottom: 70px;
-}
-
-.linha-produto {
+.empresa-conteudo {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
     align-items: center;
-    gap: 70px;
-    margin-bottom: 100px;
-    text-align: left;
-}
-
-/* Área das fotos */
-
-.galeria-linha {
-    width: 50%;
-    position: relative;
-}
-
-.galeria-linha img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 10px;
-    display: block;
-}
-
-/* Indicadores */
-
-.indicadores {
-    position: absolute;
-    bottom: 15px;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-}
-
-.indicadores span {
-    width: 9px;
-    height: 9px;
-    background-color: white;
-    border-radius: 50%;
-    opacity: 0.6;
-}
-
-.indicadores span.ativo {
-    opacity: 1;
-}
-
-/* Informações */
-
-.info-linha {
-    width: 50%;
-}
-
-.info-linha h3 {
-    font-size: 30px;
-    margin-bottom: 20px;
-}
-
-.info-linha p {
-    font-size: 17px;
-    line-height: 1.7;
-    margin-bottom: 25px;
-}
-
-.info-linha h4 {
-    font-size: 19px;
-    margin-bottom: 12px;
-}
-
-.info-linha ul {
-    padding-left: 20px;
-    margin-bottom: 30px;
-}
-
-.info-linha li {
-    margin-bottom: 8px;
-}
-
-.botao-linha {
-    display: inline-block;
-    padding: 12px 22px;
-    background-color: #d35400;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-/* =========================
-   LINHAS ALTERNADAS
-========================= */
-
-.linha-produto:nth-of-type(even) {
-    flex-direction: row-reverse;
-}
-
-/* ===============================
-   TRABALHE CONOSCO
-================================ */
-
-.trabalhe-conosco {
-    padding: 100px 10%;
-    background-color: #f8f9fa;
-    text-align: center;
-}
-
-.trabalhe-conosco h2 {
-    font-size: 34px;
-    margin-bottom: 15px;
-    font-weight: 600;
-    color: #123f82;
-}
-
-.trabalhe-conosco h2::after {
-    content: "";
-    display: block;
-    width: 50px;
-    height: 3px;
-    background-color: #d35400;
-    margin: 15px auto 30px;
-}
-
-.texto-trabalhe {
-    max-width: 750px;
-    margin: 0 auto 50px;
-    font-size: 17px;
-    line-height: 1.7;
-    color: #555;
-}
-
-.trabalhe-conteudo {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: start;
-}
-
-.trabalhe-info {
-    text-align: left;
-    padding-top: 20px;
-}
-
-.trabalhe-info h3 {
-    font-size: 27px;
-    color: #123f82;
-    margin-bottom: 20px;
-}
-
-.trabalhe-info p {
-    font-size: 16px;
-    line-height: 1.7;
-    color: #555;
-    margin-bottom: 20px;
-}
-
-.trabalhe-formulario {
-    background-color: white;
-    padding: 35px;
-    border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-    text-align: left;
-}
-
-.trabalhe-formulario form {
-    display: flex;
-    flex-direction: column;
-}
-
-.trabalhe-formulario label {
-    margin-bottom: 7px;
-    font-weight: 600;
-    color: #333;
-}
-
-.trabalhe-formulario input,
-.trabalhe-formulario select,
-.trabalhe-formulario textarea {
-    width: 100%;
-    padding: 13px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-family: Arial, sans-serif;
-    font-size: 15px;
-    box-sizing: border-box;
-}
-
-.trabalhe-formulario input:focus,
-.trabalhe-formulario select:focus,
-.trabalhe-formulario textarea:focus {
-    outline: none;
-    border-color: #123f82;
-}
-
-.trabalhe-formulario textarea {
-    resize: vertical;
-}
-
-.trabalhe-formulario input[type="file"] {
-    padding: 10px;
-    background-color: #fafafa;
-}
-
-.trabalhe-formulario button {
-    padding: 14px 25px;
-    border: none;
-    border-radius: 5px;
-    background-color: #d35400;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-
-.trabalhe-formulario button:hover {
-    background-color: #b84300;
-}
-
-
-/* RESPONSIVO */
-
-@media (max-width: 800px) {
-
-    .trabalhe-conteudo {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .trabalhe-info {
-        text-align: center;
-    }
-
-    .trabalhe-formulario {
-        padding: 25px;
-    }
-
-}
-
-.diferenciais {
-    padding: 100px 10%;
-    text-align: center;
-    background-color: #f5f5f5;
-}
-
-.diferenciais h2 {
-    font-size: 32px;
-    margin-bottom: 40px;
-}
-
-.lista-diferenciais {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-}
-
-.diferencial {
-    width: 280px;
-    padding: 30px;
-
-    background-color: white;
-    border-radius: 8px;
-}
-
-.diferencial h3 {
-    margin-bottom: 15px;
-}
-
-.diferencial p {
-    line-height: 1.6;
-}
-
-.contato {
-    padding: 100px 10%;
-    text-align: center;
-}
-
-.contato h2 {
-    font-size: 32px;
-    margin-bottom: 40px;
-}
-
-.contato-conteudo {
-    display: flex;
-    justify-content: center;
+    justify-content: space-between;
     gap: 80px;
-    text-align: left;
 }
 
-.informacoes {
-    width: 300px;
+.empresa-texto {
+    flex: 1.4;
 }
 
-.informacoes h3 {
-    margin-bottom: 20px;
+.empresa-subtitulo {
+    display: block;
+    color: #d35400;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
 }
 
-.informacoes p {
-    margin-bottom: 12px;
+.empresa-texto h2 {
+    margin: 0;
+    font-size: 38px;
+    color: #222;
+    font-weight: 600;
 }
 
-form {
-    width: 400px;
+.linha-destaque {
+    width: 55px;
+    height: 4px;
+    background: #d35400;
+    margin: 18px 0 25px;
+    border-radius: 3px;
+}
 
+.empresa-texto p {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.8;
+    margin: 0 0 16px;
+    max-width: 700px;
+}
+
+.empresa-texto .botao {
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.empresa-destaques {
+    flex: 0.8;
     display: flex;
     flex-direction: column;
+    gap: 20px;
 }
 
-form label {
+.empresa-card {
+    background: white;
+    border-left: 5px solid #d35400;
+    padding: 28px 30px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+    border-radius: 4px;
+}
+
+.empresa-card strong {
+    display: block;
+    color: #d35400;
+    font-size: 34px;
+    font-weight: 600;
     margin-bottom: 5px;
 }
 
-form input,
-form textarea {
-    padding: 12px;
-    margin-bottom: 15px;
-
-    border: 1px solid #ccc;
-    border-radius: 5px;
-
-    font-size: 16px;
+.empresa-card span {
+    color: #555;
+    font-size: 14px;
 }
 
-form textarea {
-    height: 120px;
-    resize: vertical;
+/* RESPONSIVO */
+
+@media (max-width: 768px) {
+
+    .empresa {
+        padding: 60px 25px;
+    }
+
+    .empresa-conteudo {
+        flex-direction: column;
+        gap: 40px;
+        align-items: stretch;
+    }
+
+    .empresa-texto h2 {
+        font-size: 30px;
+    }
+
+    .empresa-destaques {
+        width: 100%;
+    }
 }
-
-form button {
-    padding: 12px;
-
-    border: none;
-    border-radius: 5px;
-
-    background-color: #d35400;
-    color: white;
-
-    font-size: 16px;
-    cursor: pointer;
-}
-
-form button:hover {
-    background-color: #b94600;
-}
-
 .botao-whatsapp {
     position: fixed;
     right: 25px;
@@ -548,6 +330,24 @@ form button:hover {
 
     z-index: 1000;
 }
+/* BOTÃO - CONHEÇA NOSSA HISTÓRIA */
+
+.botao {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #d35400;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.botao:hover {
+    background: #a84300;
+}
+
 .botao-whatsapp:hover {
     background-color: #1ebe5d;
 }
@@ -571,137 +371,346 @@ form button:hover {
     margin: 15px auto 0;
 }
 /* =========================
-   CERTIFICADOS
+   RODAPÉ
 ========================= */
 
-.certificados {
-    padding: 90px 10%;
-    background-color: #ffffff;
+.rodape {
+    background: #d35400;
+    color: white;
+    width: 100%;
+    margin-top: 0;
+}
+
+.rodape-conteudo {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 45px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+}
+
+.rodape-coluna {
+    flex: 1;
+}
+
+.rodape-coluna:first-child {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.rodape-logo {
+    width: 210px;
+    height: auto;
+    display: block;
+}
+
+.rodape-coluna h3 {
+    margin: 0 0 18px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.rodape-coluna p {
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+.rodape-coluna p i {
+    width: 20px;
+    margin-right: 8px;
+}
+
+.rodape-coluna a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+.rodape-coluna a:hover {
+    text-decoration: underline;
+}
+
+.rodape-final {
+    border-top: 1px solid rgba(255,255,255,0.3);
+    text-align: center;
+    padding: 15px 20px;
+}
+
+.rodape-final p {
+    margin: 0;
+    font-size: 13px;
+}
+/* =========================
+   PÁGINA EMPRESA
+========================= */
+
+.titulo-pagina {
+    background: #f7f7f7;
+    text-align: center;
+    padding: 75px 30px 60px;
+}
+
+.titulo-pagina span {
+    color: #d35400;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.titulo-pagina h1 {
+    margin: 10px 0 0;
+    font-size: 42px;
+    font-weight: 600;
+    color: #222;
+}
+
+.titulo-pagina .linha-destaque {
+    margin: 18px auto 0;
+}
+
+
+/* =========================
+   HISTÓRIA
+========================= */
+
+.empresa-historia {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 90px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+}
+
+.empresa-historia-texto {
+    flex: 1.5;
+}
+
+.empresa-historia-texto h2 {
+    margin: 0 0 25px;
+    font-size: 32px;
+    color: #222;
+    font-weight: 600;
+}
+
+.empresa-historia-texto p {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.8;
+    margin: 0 0 18px;
+}
+
+.empresa-historia-destaques {
+    flex: 0.8;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.empresa-info {
+    background: #f7f7f7;
+    border-left: 5px solid #d35400;
+    padding: 28px 30px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+    border-radius: 4px;
+}
+
+.empresa-info strong {
+    display: block;
+    color: #d35400;
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.empresa-info span {
+    color: #555;
+    font-size: 14px;
+}
+
+
+/* =========================
+   INSTITUCIONAL
+========================= */
+
+.empresa-institucional {
+    background: #f7f7f7;
+    padding: 90px 60px;
+}
+
+.empresa-institucional > div {
+    max-width: 900px;
+    margin: 0 auto;
     text-align: center;
 }
 
-/* TÍTULO */
-
-.certificados h2 {
-    font-size: 36px;
-    color: #123f82;
-    margin-bottom: 12px;
-    font-weight: 700;
+.empresa-subtitulo {
+    color: #d35400;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
 }
 
-/* detalhe abaixo do título */
+.empresa-institucional h2 {
+    margin: 12px 0 25px;
+    font-size: 34px;
+    font-weight: 600;
+    color: #222;
+}
 
-.certificados h2::after {
-    content: "";
-    display: block;
-
-    width: 60px;
-    height: 4px;
-
-    background-color: #d35400;
-
-    margin: 15px auto 45px;
-
-    border-radius: 3px;
+.empresa-institucional p {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.8;
+    margin: 0 auto 15px;
 }
 
 
-/* LISTA */
+/* =========================
+   RESPONSIVO
+========================= */
 
-.lista-certificados {
-    max-width: 1100px;
-    margin: 0 auto;
+@media (max-width: 768px) {
 
-    display: grid;
+    .titulo-pagina {
+        padding: 55px 25px 45px;
+    }
 
-    grid-template-columns: repeat(2, 1fr);
+    .titulo-pagina h1 {
+        font-size: 32px;
+    }
 
-    gap: 20px 30px;
+    .empresa-historia {
+        padding: 60px 25px;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .empresa-historia-texto h2 {
+        font-size: 28px;
+    }
+
+    .empresa-historia-destaques {
+        width: 100%;
+    }
+
+    .empresa-institucional {
+        padding: 60px 25px;
+    }
+
+    .empresa-institucional h2 {
+        font-size: 28px;
+    }
 }
+/* =========================
+   BANNER EMPRESA
+========================= */
 
+.empresa-banner {
+    min-height: 600px;
 
-/* CARD */
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.25),
+            rgba(0, 0, 0, 0.25)
+        ),
+        url("imagens/empresa-fundo.jpg");
 
-.certificado {
-    background-color: #ffffff;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 
-    border: 1px solid #e1e5ea;
-
-    border-radius: 8px;
-
-    padding: 22px 25px;
-
-    text-align: left;
-
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease,
-        border-color 0.25s ease;
-}
-
-
-/* HOVER */
-
-.certificado:hover {
-    transform: translateY(-4px);
-
-    border-color: #d35400;
-
-    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
-}
-
-
-/* LINK */
-
-.certificado a {
     display: flex;
-
     align-items: center;
+    justify-content: center;
 
-    gap: 15px;
-
-    color: #123f82;
-
-    text-decoration: none;
-
-    font-size: 18px;
-
-    font-weight: 500;
+    padding: 60px 30px;
 }
 
 
-/* ÍCONE */
+/* FAIXA DE VIDRO */
 
-.certificado i {
-    font-size: 25px;
+.empresa-faixa-vidro {
+    width: 100%;
+    max-width: 950px;
 
+    background: rgba(255, 255, 255, 0.82);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    padding: 50px 60px;
+
+    border: 1px solid rgba(255, 255, 255, 0.6);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.20);
+
+    text-align: center;
+}
+
+
+.empresa-faixa-vidro span {
     color: #d35400;
 
-    min-width: 25px;
+    font-size: 13px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
 }
 
 
-/* HOVER DO LINK */
+.empresa-faixa-vidro h1 {
+    margin: 12px 0 0;
 
-.certificado a:hover {
-    color: #d35400;
+    font-size: 44px;
+
+    font-weight: 600;
+
+    color: #222;
 }
 
 
-/* RESPONSIVO */
-
-@media (max-width: 750px) {
-
-    .lista-certificados {
-        grid-template-columns: 1fr;
-    }
-
-    .certificados {
-        padding: 70px 6%;
-    }
-
-    .certificados h2 {
-        font-size: 30px;
-    }
-
+.empresa-faixa-vidro .linha-destaque {
+    margin: 20px auto;
 }
+
+
+.empresa-faixa-vidro p {
+    margin: 0;
+
+    color: #555;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+
+/* CELULAR */
+
+@media (max-width: 768px) {
+
+    .empresa-banner {
+        min-height: 500px;
+
+        background-attachment: scroll;
+
+        padding: 30px 20px;
+    }
+
+    .empresa-faixa-vidro {
+        padding: 35px 25px;
+    }
+
+    .empresa-faixa-vidro h1 {
+        font-size: 32px;
+    }
+
